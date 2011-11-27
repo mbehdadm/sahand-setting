@@ -1,0 +1,20 @@
+<project name="sahand-proxy">
+	<path id="compile.classpath">
+		<fileset dir="lib/">
+			<include name="webservices-rt.jar"/>
+			<include name="webservices-tools.jar"/>
+			<include name="javaee.jar"/>
+			<include name="tools.jar"/>
+
+		</fileset>
+	</path>
+	<taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport" classpathref="compile.classpath"/>
+
+	<target name="wsimport-admin">
+		<wsimport  debug="true" verbose="true" keep="true" 
+			package="com.sahand.setting.proxy.service" destdir="modules/system-setting-proxy/src/main/java" 
+			wsdl="http://localhost:8180/system-setting-service-1.0.0.Final/SettingServiceImpl?wsdl"  binding="custom-client.xml">
+		</wsimport>
+	</target>
+
+</project>

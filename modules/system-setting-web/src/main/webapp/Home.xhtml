@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="#{theme.settingTemplate}">
+
+	<ui:define name="center">
+		<h:form>
+			<br />
+			<h:outputText value="#{messages['SettingSystem.title']}" />
+			<br />
+			<br />
+			<p:toolbar>
+				<p:toolbarGroup align="left">
+					<p:menuButton value="#{messages['SettingSystem.title']}">
+						<p:menuitem value="#{messages['settingSystem.job']}"
+							url="/pages/jobs/Jobs.xhtml" />
+					</p:menuButton>
+				</p:toolbarGroup>
+			</p:toolbar>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
