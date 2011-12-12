@@ -10,8 +10,7 @@ import com.sahand.setting.persistence.model.SystemLookupTableTmp;
 public class Convertors implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private Logger logger = SahandLogger
-			.getSahandLogger(SystemLookupManagement.class);
+	private Logger logger = SahandLogger.getSahandLogger(SystemLookupManagement.class);
 
 	public void convert(SystemLookupInformation systemLookupInformation,
 			SystemLookupTableTmp systemLookupTable) {

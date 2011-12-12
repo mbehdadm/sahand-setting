@@ -2,9 +2,15 @@
 <project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="system-setting-web">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="system-setting-proxy-1.0.0.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/system-setting-proxy/system-setting-proxy">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="system-setting-api-1.0.0.Final.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/system-setting-api/system-setting-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/system-setting-web/target/classes"/>
         <property name="context-root" value="setting-system"/>
     </wb-module>

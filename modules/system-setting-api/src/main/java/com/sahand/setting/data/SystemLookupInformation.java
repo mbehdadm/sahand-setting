@@ -3,23 +3,20 @@ package com.sahand.setting.data;
 import java.io.Serializable;
 
 public class SystemLookupInformation implements Serializable{
-
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -3279973169966050774L;
-	private int id;
+	
+	private Integer id;
 	private String tag;
 	private String fdesc;
 	private String ldesc;
 	
 	private boolean autoGenerate = false;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

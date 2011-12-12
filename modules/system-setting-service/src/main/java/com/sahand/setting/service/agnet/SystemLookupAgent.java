@@ -3,16 +3,10 @@ package com.sahand.setting.service.agnet;
 import java.io.Serializable;
 import javax.ejb.EJB;
 import org.slf4j.Logger;
-
 import com.sahand.setting.data.*;
 import com.sahand.setting.persistence.management.*;
 import com.sahand.common.util.logger.SahandLogger;
-import javax.enterprise.context.SessionScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
 
-//@Named
-//@SessionScoped
 public class SystemLookupAgent implements Serializable {
 	private static final long serialVersionUID = 1L;
 

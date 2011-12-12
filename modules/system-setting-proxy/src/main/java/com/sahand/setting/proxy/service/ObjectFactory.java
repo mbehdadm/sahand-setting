@@ -30,11 +30,83 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ResponseHeader }
+     * 
+     */
+    public ResponseHeader createResponseHeader() {
+        return new ResponseHeader();
+    }
+
+    /**
+     * Create an instance of {@link SettingReportRequest }
+     * 
+     */
+    public SettingReportRequest createSettingReportRequest() {
+        return new SettingReportRequest();
+    }
+
+    /**
+     * Create an instance of {@link Credential }
+     * 
+     */
+    public Credential createCredential() {
+        return new Credential();
+    }
+
+    /**
+     * Create an instance of {@link SettingReportResponse }
+     * 
+     */
+    public SettingReportResponse createSettingReportResponse() {
+        return new SettingReportResponse();
+    }
+
+    /**
      * Create an instance of {@link SystemLookupInformation }
      * 
      */
     public SystemLookupInformation createSystemLookupInformation() {
         return new SystemLookupInformation();
+    }
+
+    /**
+     * Create an instance of {@link LoadSystemLookup }
+     * 
+     */
+    public LoadSystemLookup createLoadSystemLookup() {
+        return new LoadSystemLookup();
+    }
+
+    /**
+     * Create an instance of {@link RequestHeader }
+     * 
+     */
+    public RequestHeader createRequestHeader() {
+        return new RequestHeader();
+    }
+
+    /**
+     * Create an instance of {@link LoadSystemLookupResponse }
+     * 
+     */
+    public LoadSystemLookupResponse createLoadSystemLookupResponse() {
+        return new LoadSystemLookupResponse();
+    }
+
+    /**
+     * Create an instance of {@link Messages }
+     * 
+     */
+    public Messages createMessages() {
+        return new Messages();
+    }
+
+    /**
+     * Create an instance of {@link SahandCore }
+     * 
+     */
+    public SahandCore createSahandCore() {
+        return new SahandCore();
     }
 
 }

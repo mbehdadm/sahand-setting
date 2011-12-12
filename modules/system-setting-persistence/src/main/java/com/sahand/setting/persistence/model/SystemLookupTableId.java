@@ -6,14 +6,13 @@ import javax.persistence.*;
 @Embeddable
 public class SystemLookupTableId implements Serializable {
 
-	
 	@Column(name = "LKID", nullable = false, length = 6)
 	private Integer id;
 	@Column(name = "LKTAG", nullable = false, length = 30)
 	private String tag;
 
-    public SystemLookupTableId() {
-    }
+	public SystemLookupTableId() {
+	}
 
 	public Integer getId() {
 		return id;
@@ -62,6 +61,9 @@ public class SystemLookupTableId implements Serializable {
 		return true;
 	}
 
-
+	@Override
+	public String toString() {
+		return "SystemLookupTableId [id=" + id + ", tag=" + tag + "]";
+	}
 	
 }

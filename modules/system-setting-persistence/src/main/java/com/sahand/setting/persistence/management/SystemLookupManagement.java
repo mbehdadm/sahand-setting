@@ -23,7 +23,7 @@ public class SystemLookupManagement implements Serializable {
 	EntityManager entityManager;
 
 	public boolean create(SystemLookupInformation systemLookupInformation) {
-		System.out.println("in SystemLookupManagement : "+systemLookupInformation.toString());
+		System.out.println("in SystemLookupManagement : "+ systemLookupInformation.toString());
 		try {
 			SystemLookupTableTmp systemLookupTable = new SystemLookupTableTmp();
 			Convertors convertors = new Convertors();

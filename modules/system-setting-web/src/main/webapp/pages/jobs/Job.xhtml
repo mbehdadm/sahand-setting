@@ -1,0 +1,136 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="#{theme.settingTemplate}">
+
+	<ui:define name="center">
+		<h:form>
+			<br />
+
+			<p:contextMenu for="jobs">
+			
+				<p:menuitem value="Delete" icon="ui-icon-search">
+					
+					<f:setPropertyActionListener value="#{true}"
+						target="#{requestScope.renderCampNou}" />
+						
+						<f:setPropertyActionListener value="#{jobList.action}"
+						target="#{Create}" />
+				</p:menuitem>
+				<p:menuitem value="Delete" icon="ui-icon-search"
+					oncomplete="confirmation.show()">
+					<f:setPropertyActionListener value="#{job}"
+						target="#{jobList.systemLookupInformation}" />
+				</p:menuitem>
+				<p:menuitem value="edit" update="tabJob" icon="ui-icon-close"
+					actionListener="#{jobList.Edit}">
+					<f:setPropertyActionListener value="#{true}"
+						target="#{requestScope.renderCampNou}" />
+						<f:setPropertyActionListener value="#{jobList.action}"
+						target="#{Edit}" />
+				</p:menuitem>
+			</p:contextMenu>
+			<p:panel header="Jobs" id="jobList">
+				<p:dataTable id="jobs" var="job"
+					value="#{jobList.systemLookupInformations}">
+					
+					 <p:ajax event="onclick" update="out"   
+                   				 listener="#{jobList.setSelected(job)}"/> 
+                    
+                    
+					<p:column headerText="ID">
+						<h:outputText value="#{job.id}" />
+					</p:column>
+					<p:column headerText="TAG">
+						<h:outputText value="#{job.tag}" />
+					</p:column>
+					<p:column headerText="Farsi Discription">
+						<h:outputText value="#{job.fdesc}" />
+					</p:column>
+					<p:column headerText="Latin Discription">
+						<h:outputText value="#{job.ldesc}" />
+					</p:column>
+
+				<!-- 	<p:column headerText="Commands">
+						<p:commandButton value="delete" onclick="confirmation.show()">
+							<f:setPropertyActionListener value="#{job}"
+								target="#{jobList.systemLookupInformation}" />
+						</p:commandButton>
+
+						<p:commandButton value="edit" update="tabJob"
+							oncomplete="editJob.show()">
+							<f:setPropertyActionListener value="#{job}"
+								target="#{jobList.systemLookupInformation}" />
+							<f:setPropertyActionListener value="#{true}"
+								target="#{requestScope.renderCampNou}" />
+
+						</p:commandButton>
+
+					</p:column>-->
+				</p:dataTable>
+			</p:panel>
+			<br />
+			<p:outputPanel autoUpdate="true">
+				<p:tabView effect="fade" effectDuration="fast" id="tabJob"
+					rendered="#{requestScope.renderCampNou}">
+					<p:tab title="Edit">
+						<p:panel header="" id="editJob">
+							<h:outputText value="ID :" />
+							<p:inputText id="editId"
+								value="#{jobList.systemLookupInformation.id}" />
+							<br />
+							<h:outputText value="Tag :" />
+							<p:inputText id="editTag"
+								value="#{jobList.systemLookupInformation.tag}" />
+							<br />
+							<h:outputText value="Farsi Description :" />
+							<p:inputText id="editFDesc"
+								value="#{jobList.systemLookupInformation.fdesc}" />
+							<br />
+							<h:outputText value="Latin Description :" />
+							<p:inputText id="editLDesc"
+								value="#{jobList.systemLookupInformation.ldesc}" />
+							<br />
+							<br />
+							<p:commandButton value="Edit" 
+								action="#{jobList.Edit}" rendered="#{jobList.operation}"/>
+							<p:commandButton value="Create" 
+								action="#{jobList.Add}" rendered="#{!jobList.operation}"/>	
+						</p:panel>
+					</p:tab>
+					<!-- <p:tab title="Add">
+					<p:panel header="Add job ..." id="AddJob">
+						<h:outputText value="ID :" />
+						<p:inputText id="addId" value="#{jobList.id}" />
+						<br />
+						<h:outputText value="Tag :" />
+						<p:inputText id="addTag" value="#{jobList.tag}" />
+						<br />
+						<h:outputText value="Farsi Description :" />
+						<p:inputText id="addFDesc" value="#{jobList.fdesc}" />
+						<br />
+						<h:outputText value="Latin Description :" />
+						<p:inputText id="addLDesc" value="#{jobList.ldesc}" />
+						<br />
+						<br />
+						<p:commandButton value="Add new job" ajax="false" action="#{jobList.Add}" />
+					</p:panel>
+					</p:tab>-->
+				</p:tabView>
+			</p:outputPanel>
+
+			<p:confirmDialog message="Are you sure about destroying this job ?"
+				header="delete !!!" severity="alert" widgetVar="confirmation">
+				<p:commandButton value="Yes" oncomplete="confirmation.hide()"
+					action="#{jobList.Delete}" update="jobList" />
+				<p:commandButton value="No" onclick="confirmation.hide()"
+					type="button" />
+			</p:confirmDialog>
+		</h:form>
+	</ui:define>
+</ui:composition>
+

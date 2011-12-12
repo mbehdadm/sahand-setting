@@ -8,12 +8,20 @@
 
 		</fileset>
 	</path>
+	
 	<taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport" classpathref="compile.classpath"/>
-
-	<target name="wsimport-admin">
+	
+	<target name="wsimport-SettingSetup">
 		<wsimport  debug="true" verbose="true" keep="true" 
 			package="com.sahand.setting.proxy.service" destdir="modules/system-setting-proxy/src/main/java" 
-			wsdl="http://localhost:8180/system-setting-service-1.0.0.Final/SettingServiceImpl?wsdl"  binding="custom-client.xml">
+			wsdl="http://192.168.7.192:8180/setting-service/SettingSetupImpl?wsdl"  binding="custom-client.xml">
+		</wsimport>
+	</target>
+	
+	<target name="wsimport-SettingReport">
+		<wsimport  debug="true" verbose="true" keep="true" 
+			package="com.sahand.setting.proxy.service" destdir="modules/system-setting-proxy/src/main/java" 
+			wsdl="http://192.168.7.192:8180/setting-service/SettingReportImpl?wsdl"  binding="custom-client.xml">
 		</wsimport>
 	</target>
 

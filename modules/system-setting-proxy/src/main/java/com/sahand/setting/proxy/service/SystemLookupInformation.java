@@ -16,8 +16,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="autoGenerate" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="fdesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="ldesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="tag" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
@@ -30,6 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "systemLookupInformation", propOrder = {
+    "autoGenerate",
     "fdesc",
     "id",
     "ldesc",
@@ -37,10 +39,27 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SystemLookupInformation {
 
+    protected boolean autoGenerate;
     protected String fdesc;
-    protected int id;
+    protected Integer id;
     protected String ldesc;
     protected String tag;
+
+    /**
+     * Gets the value of the autoGenerate property.
+     * 
+     */
+    public boolean isAutoGenerate() {
+        return autoGenerate;
+    }
+
+    /**
+     * Sets the value of the autoGenerate property.
+     * 
+     */
+    public void setAutoGenerate(boolean value) {
+        this.autoGenerate = value;
+    }
 
     /**
      * Gets the value of the fdesc property.
@@ -69,16 +88,24 @@ public class SystemLookupInformation {
     /**
      * Gets the value of the id property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
      * Sets the value of the id property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 

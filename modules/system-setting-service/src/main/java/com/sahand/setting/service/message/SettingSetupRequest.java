@@ -4,7 +4,6 @@ import com.sahand.common.util.message.RequestHeader;
 import com.sahand.setting.data.SystemLookupInformation;
 
 public class SettingSetupRequest extends RequestHeader{
-	
 	private SystemLookupInformation lookupInformation;
 
 	public SystemLookupInformation getLookupInformation() {
@@ -20,7 +19,4 @@ public class SettingSetupRequest extends RequestHeader{
 		return "IssuerSetupRequest [lookupInformation=" + lookupInformation
 				+ ", toString()=" + super.toString() + "]";
 	}
-		
-	
-	
 }

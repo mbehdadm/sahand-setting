@@ -20,8 +20,4 @@ public class SettingSetupResponse extends ResponseHeader {
 		return "IssuerSetupResponse [lookupInformation=" + lookupInformation
 				+ ", toString()=" + super.toString() + "]";
 	}
-	
-	
-	
-	
 }
